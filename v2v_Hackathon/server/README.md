@@ -6,6 +6,10 @@ Node.js + Express + MongoDB (Mongoose) backend powering two features:
 2. **Smart Emergency SOS** — one-tap, 3-level emergency alert system
 
 ---
+## Project Structure
+
+- frontend
+- server
 
 ## 1. Folder structure
 
