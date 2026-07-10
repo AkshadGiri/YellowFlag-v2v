@@ -6,6 +6,8 @@ Node.js + Express + MongoDB (Mongoose) backend powering two features:
 2. **Smart Emergency SOS** — one-tap, 3-level emergency alert system
 
 ---
+
+
 ## Project Structure
 
 - frontend
@@ -177,3 +179,6 @@ All endpoints except `/api/auth/register` and `/api/auth/login` require header:
 - File uploads currently save to local disk (`/uploads`) — fine for a hackathon demo, but swap `middleware/upload.js` to stream to S3/Cloudinary/Firebase before any real deployment (local disk storage isn't persistent on most hosting platforms).
 - Trusted-contact viewing of a live SOS alert currently just requires being logged in and knowing the alert ID — for production, generate a separate expiring signed share-link/token per contact instead.
 - If you'd rather use **Supabase/Postgres** instead of MongoDB: the main change is swapping Mongoose schemas for Supabase tables + using PostGIS (`geography(Point)` + `ST_DWithin`) instead of `2dsphere`/`$near` for the nearby-incidents query. Everything else (controllers' logic, routes, services) stays conceptually the same. Happy to generate that version too if you want it.
+
+
+##added twilio setup
