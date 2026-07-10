@@ -1,4 +1,4 @@
-# Community Safety Network — Backend
+# Community Safety Network 
 
 Backend API for the **Community Safety Network** platform, providing incident reporting and a Smart Emergency SOS system. Built with Node.js, Express, and MongoDB, with real-time updates via Socket.IO and SMS/email alerting via Twilio and Nodemailer.
 
