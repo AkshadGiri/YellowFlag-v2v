@@ -1,0 +1,110 @@
+.contacts-card {
+  background: #16181d;
+  border: 1px solid #24272e;
+  border-radius: 20px;
+  padding: 24px;
+  color: #e5e7eb;
+  font-family: system-ui, sans-serif;
+  width: 100%;
+  max-width: 420px;
+}
+
+.contacts-card h3 {
+  margin: 0 0 6px;
+}
+
+.contacts-hint {
+  color: #9aa0aa;
+  font-size: 13px;
+  margin: 0 0 14px;
+}
+
+.contacts-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contacts-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #1d2027;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.contacts-relation {
+  color: #9aa0aa;
+  font-size: 12px;
+}
+
+.contacts-primary-badge {
+  margin-left: 8px;
+  background: #b8860b;
+  color: #fff;
+  font-size: 10px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.contacts-detail {
+  color: #9aa0aa;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.contacts-remove {
+  background: transparent;
+  border: 1px solid #3a3f47;
+  color: #ff6b6b;
+  border-radius: 8px;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.contacts-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contacts-form input,
+.contacts-form select {
+  background: #1d2027;
+  border: 1px solid #2f3339;
+  color: #e5e7eb;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.contacts-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #cbd0d8;
+}
+
+.contacts-form button {
+  margin-top: 4px;
+  background: #2f6fed;
+  color: #fff;
+  border: none;
+  padding: 11px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.contacts-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

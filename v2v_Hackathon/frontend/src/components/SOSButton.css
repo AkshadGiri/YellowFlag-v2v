@@ -1,0 +1,177 @@
+.sos-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 32px 24px;
+  border-radius: 20px;
+  background: #16181d;
+  border: 1px solid #24272e;
+}
+
+.sos-hold-button {
+  position: relative;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background:
+    radial-gradient(circle at 50% 50%, #c62828 0%, #a01f1f 70%, #8c1c1c 100%);
+  box-shadow: 0 0 0 6px rgba(198, 40, 40, 0.15), 0 8px 24px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  transition: transform 0.12s ease;
+}
+
+.sos-hold-button:active {
+  transform: scale(0.97);
+}
+
+.sos-hold-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: conic-gradient(#ffffff var(--hold-pct, 0%), transparent 0);
+  opacity: 0.25;
+  transition: background 0.03s linear;
+}
+
+.sos-hold-button__label {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.sos-hold-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sos-hint {
+  color: #9aa0aa;
+  font-size: 13px;
+  text-align: center;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+.sos-error {
+  color: #ff6b6b;
+  font-size: 13px;
+  text-align: center;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+}
+
+/* ===== Active alert panel ===== */
+
+.sos-panel--active {
+  align-items: stretch;
+  width: 100%;
+  max-width: 420px;
+}
+
+.sos-level-badge {
+  align-self: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+
+.sos-level-badge--1 { background: #b8860b; }
+.sos-level-badge--2 { background: #d2691e; }
+.sos-level-badge--3 { background: #c62828; }
+
+.sos-status-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 16px 0 4px;
+}
+
+.sos-status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.sos-status-item--on {
+  color: #e5e7eb;
+}
+
+.sos-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3a3f47;
+  flex-shrink: 0;
+}
+
+.sos-status-item--on .sos-status-dot {
+  background: #4ade80;
+  box-shadow: 0 0 6px #4ade80;
+}
+
+.sos-address {
+  color: #cbd0d8;
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  text-align: center;
+  margin: 4px 0 0;
+}
+
+.sos-escalate-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.sos-btn {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 13.5px;
+  transition: filter 0.15s ease;
+}
+
+.sos-btn:hover {
+  filter: brightness(1.1);
+}
+
+.sos-btn--level2 {
+  background: #d2691e;
+  color: #fff;
+}
+
+.sos-btn--level3 {
+  background: #c62828;
+  color: #fff;
+}
+
+.sos-btn--safe {
+  margin-top: 12px;
+  background: #1f8a4c;
+  color: #fff;
+  padding: 14px;
+  font-size: 15px;
+}
+
+.sos-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
