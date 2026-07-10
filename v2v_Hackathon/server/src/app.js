@@ -20,7 +20,7 @@ app.use(
   cors({
     origin: process.env.CLIENT_URL || "*",
     credentials: true,
-  })
+  }),
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -28,6 +28,15 @@ app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 
 // Serve uploaded evidence files (audio/video/images) statically
 app.use("/uploads", express.static(path.join(__dirname, "..", "uploads")));
+
+// ===== Home Route =====
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    app: "SafeSphere Backend",
+    message: "Backend is running successfully 🚀",
+  });
+});
 
 // ===== Health check =====
 app.get("/api/health", (req, res) => {
