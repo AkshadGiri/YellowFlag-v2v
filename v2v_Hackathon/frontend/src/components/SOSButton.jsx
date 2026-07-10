@@ -11,7 +11,8 @@ const LEVEL_LABELS = {
 };
 
 export default function SOSButton() {
-  const { alert, status, error, geoError, trigger, escalate, resolve } = useSOS();
+  const { alert, status, error, geoError, trigger, escalate, resolve } =
+    useSOS();
 
   const [holdProgress, setHoldProgress] = useState(0); // 0-100
   const holdTimerRef = useRef(null);
@@ -50,7 +51,11 @@ export default function SOSButton() {
   };
 
   const handleResolve = () => {
-    if (window.confirm("Mark yourself as safe? This will stop sharing your location and close the alert.")) {
+    if (
+      window.confirm(
+        "Mark yourself as safe? This will stop sharing your location and close the alert.",
+      )
+    ) {
       resolve().catch(() => {});
     }
   };
@@ -64,8 +69,14 @@ export default function SOSButton() {
 
         <div className="sos-status-grid">
           <StatusItem label="Guardian Mode" active={alert.guardianModeActive} />
-          <StatusItem label="Audio recording" active={alert.audioRecordingActive} />
-          <StatusItem label="Video recording" active={alert.videoRecordingActive} />
+          <StatusItem
+            label="Audio recording"
+            active={alert.audioRecordingActive}
+          />
+          <StatusItem
+            label="Video recording"
+            active={alert.videoRecordingActive}
+          />
           <StatusItem label="Police notified" active={alert.policeNotified} />
         </div>
 
@@ -73,18 +84,28 @@ export default function SOSButton() {
 
         <div className="sos-escalate-row">
           {alert.level < 2 && (
-            <button className="sos-btn sos-btn--level2" onClick={() => handleEscalate(2)}>
+            <button
+              className="sos-btn sos-btn--level2"
+              onClick={() => handleEscalate(2)}
+            >
               Escalate to Need Help
             </button>
           )}
           {alert.level < 3 && (
-            <button className="sos-btn sos-btn--level3" onClick={() => handleEscalate(3)}>
+            <button
+              className="sos-btn sos-btn--level3"
+              onClick={() => handleEscalate(3)}
+            >
               Escalate to Emergency
             </button>
           )}
         </div>
 
-        <button className="sos-btn sos-btn--safe" onClick={handleResolve} disabled={status === "resolving"}>
+        <button
+          className="sos-btn sos-btn--safe"
+          onClick={handleResolve}
+          disabled={status === "resolving"}
+        >
           {status === "resolving" ? "Resolving…" : "I'm Safe Now"}
         </button>
 
@@ -110,8 +131,23 @@ export default function SOSButton() {
           {status === "triggering" ? "Sending…" : "SOS"}
         </span>
       </button>
-      <p className="sos-hint">Press and hold {HOLD_DURATION_MS / 1000}s to alert your trusted contacts</p>
+      <>
+        <p className="sos-hint">
+          Hold for <strong>{HOLD_DURATION_MS / 1000} seconds</strong> to
+          activate emergency mode.
+        </p>
 
+        <p
+          style={{
+            marginTop: "6px",
+            color: "#9b2c62",
+            fontWeight: 600,
+            fontSize: "14px",
+          }}
+        >
+          Your trusted contacts will receive your live location.
+        </p>
+      </>
       {(error || geoError) && <p className="sos-error">{error || geoError}</p>}
     </div>
   );

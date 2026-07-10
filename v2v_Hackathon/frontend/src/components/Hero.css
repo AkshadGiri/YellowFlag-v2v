@@ -1,0 +1,222 @@
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 8%;
+
+    background:
+    radial-gradient(circle at top left,#fff0f6 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#efe8ff 0%,transparent 35%),
+    #fffafc;
+
+    gap:60px;
+}
+
+.hero-left{
+
+    flex:1;
+
+}
+
+.hero-badge{
+
+    display:inline-block;
+
+    background:#ffe7f1;
+
+    color:#b44d77;
+
+    padding:8px 18px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+    line-height:1.1;
+
+    color:#333;
+
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+
+    color:#d94c83;
+}
+
+.hero p{
+
+    max-width:550px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+}
+
+.hero-primary{
+
+    text-decoration:none;
+
+    background:linear-gradient(135deg,#d94c83,#b24ca8);
+
+    color:white;
+
+    padding:16px 32px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.hero-primary:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.hero-secondary{
+
+    text-decoration:none;
+
+    color:#b44d77;
+
+    border:1px solid #f0bfd3;
+
+    padding:16px 32px;
+
+    border-radius:14px;
+
+    font-weight:600;
+}
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-circle{
+
+    width:320px;
+
+    height:320px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#ffd8e8,#f1e4ff);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:120px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+}
+
+@media(max-width:900px){
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+padding:50px 8%;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.hero-image{
+
+    width:480px;
+
+    max-width:100%;
+
+    animation:float 4s ease-in-out infinite;
+}
+.hero-image{
+
+width:300px;
+
+margin-top:40px;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+}

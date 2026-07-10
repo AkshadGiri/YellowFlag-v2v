@@ -16,7 +16,7 @@ export default function Login() {
     setError(null);
     try {
       await login(form.email, form.password);
-      navigate("/");
+      navigate("/dashboard");
     } catch (e2) {
       setError(e2.response?.data?.message || "Login failed");
     } finally {
@@ -27,19 +27,24 @@ export default function Login() {
   return (
     <div className="auth-page">
       <form className="auth-card" onSubmit={handleSubmit}>
-        <h1>Welcome back</h1>
-        <p className="auth-subtitle">Sign in to Community Safety Network</p>
-
+        <div className="auth-header">
+          <h1>Welcome Back 🌸</h1>
+          <p className="auth-subtitle">
+            Sign in to continue keeping yourself safe.
+          </p>
+        </div>
+        <label>Email</label>
         <input
           type="email"
-          placeholder="Email"
+          placeholder="Enter your email"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
           required
         />
+        <label>Password</label>
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Enter your password"
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
           required
@@ -48,7 +53,7 @@ export default function Login() {
         {error && <p className="sos-error">{error}</p>}
 
         <button type="submit" disabled={loading}>
-          {loading ? "Signing in…" : "Sign In"}
+          {loading ? "Signing in…" : "Continue"}
         </button>
 
         <p className="auth-switch">

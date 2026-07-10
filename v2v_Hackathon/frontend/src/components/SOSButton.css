@@ -1,177 +1,325 @@
 .sos-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  padding: 32px 24px;
-  border-radius: 20px;
-  background: #16181d;
-  border: 1px solid #24272e;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
 
 .sos-hold-button {
   position: relative;
-  width: 168px;
-  height: 168px;
-  border-radius: 50%;
+
+  width: 220px;
+  height: 220px;
+
   border: none;
+  border-radius: 50%;
+
   cursor: pointer;
-  background:
-    radial-gradient(circle at 50% 50%, #c62828 0%, #a01f1f 70%, #8c1c1c 100%);
-  box-shadow: 0 0 0 6px rgba(198, 40, 40, 0.15), 0 8px 24px rgba(0, 0, 0, 0.45);
+
+  background: linear-gradient(145deg, #ff5f7e, #d7265f);
+
+  color: white;
+
+  font-size: 3rem;
+  font-weight: 700;
+
+  box-shadow:
+    0 20px 45px rgba(215, 38, 95, .35),
+    inset 0 6px 12px rgba(255,255,255,.25);
+
+  transition: all .25s ease;
+
   overflow: hidden;
-  transition: transform 0.12s ease;
+
+  animation: pulse 2s infinite;
 }
 
-.sos-hold-button:active {
-  transform: scale(0.97);
+.sos-hold-button:hover{
+
+    transform:scale(1.05);
+
 }
 
-.sos-hold-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: conic-gradient(#ffffff var(--hold-pct, 0%), transparent 0);
-  opacity: 0.25;
-  transition: background 0.03s linear;
+.sos-hold-button:active{
+
+    transform:scale(.96);
+
 }
 
-.sos-hold-button__label {
-  position: relative;
-  z-index: 1;
-  color: #fff;
-  font-family: "Segoe UI", system-ui, sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+.sos-hold-button::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+conic-gradient(
+#fff var(--hold-pct,0%),
+transparent 0
+);
+
+opacity:.18;
+
+transition:.03s linear;
+
 }
 
-.sos-hold-button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.sos-hold-button__label{
+
+position:relative;
+
+z-index:2;
+
+letter-spacing:4px;
+
 }
 
-.sos-hint {
-  color: #9aa0aa;
-  font-size: 13px;
-  text-align: center;
-  margin: 0;
-  font-family: system-ui, sans-serif;
+.sos-hint{
+
+margin-top:22px;
+
+font-size:16px;
+
+color:#666;
+
+line-height:1.6;
+
 }
 
-.sos-error {
-  color: #ff6b6b;
-  font-size: 13px;
-  text-align: center;
-  margin: 0;
-  font-family: system-ui, sans-serif;
+.sos-error{
+
+margin-top:14px;
+
+color:#d7265f;
+
+font-weight:600;
+
 }
 
-/* ===== Active alert panel ===== */
+/* Active Panel */
 
-.sos-panel--active {
-  align-items: stretch;
-  width: 100%;
-  max-width: 420px;
+.sos-panel--active{
+
+background:#fff8fb;
+
+padding:30px;
+
+border-radius:24px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
 }
 
-.sos-level-badge {
-  align-self: center;
-  padding: 8px 18px;
-  border-radius: 999px;
-  font-family: system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.03em;
-  color: #fff;
+.sos-level-badge{
+
+display:inline-block;
+
+padding:10px 20px;
+
+border-radius:999px;
+
+font-weight:700;
+
+margin-bottom:25px;
+
+color:white;
+
 }
 
-.sos-level-badge--1 { background: #b8860b; }
-.sos-level-badge--2 { background: #d2691e; }
-.sos-level-badge--3 { background: #c62828; }
+.sos-level-badge--1{
 
-.sos-status-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 16px 0 4px;
+background:#e3a008;
+
 }
 
-.sos-status-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: system-ui, sans-serif;
-  font-size: 13px;
-  color: #6b7280;
+.sos-level-badge--2{
+
+background:#ff8c42;
+
 }
 
-.sos-status-item--on {
-  color: #e5e7eb;
+.sos-level-badge--3{
+
+background:#d7265f;
+
 }
 
-.sos-status-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #3a3f47;
-  flex-shrink: 0;
+.sos-status-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:16px;
+
+margin-bottom:20px;
+
 }
 
-.sos-status-item--on .sos-status-dot {
-  background: #4ade80;
-  box-shadow: 0 0 6px #4ade80;
+.sos-status-item{
+
+background:white;
+
+padding:14px;
+
+border-radius:14px;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+color:#777;
+
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+
 }
 
-.sos-address {
-  color: #cbd0d8;
-  font-family: system-ui, sans-serif;
-  font-size: 13px;
-  text-align: center;
-  margin: 4px 0 0;
+.sos-status-item--on{
+
+color:#222;
+
+font-weight:600;
+
 }
 
-.sos-escalate-row {
-  display: flex;
-  gap: 10px;
-  margin-top: 18px;
+.sos-status-dot{
+
+width:10px;
+
+height:10px;
+
+border-radius:50%;
+
+background:#ccc;
+
 }
 
-.sos-btn {
-  flex: 1;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-family: system-ui, sans-serif;
-  font-weight: 600;
-  font-size: 13.5px;
-  transition: filter 0.15s ease;
+.sos-status-item--on .sos-status-dot{
+
+background:#58c27d;
+
+box-shadow:0 0 10px #58c27d;
+
 }
 
-.sos-btn:hover {
-  filter: brightness(1.1);
+.sos-address{
+
+margin:18px 0;
+
+color:#666;
+
 }
 
-.sos-btn--level2 {
-  background: #d2691e;
-  color: #fff;
+.sos-escalate-row{
+
+display:flex;
+
+gap:14px;
+
+margin:25px 0;
+
+flex-wrap:wrap;
+
 }
 
-.sos-btn--level3 {
-  background: #c62828;
-  color: #fff;
+.sos-btn{
+
+flex:1;
+
+padding:14px;
+
+border:none;
+
+border-radius:14px;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.3s;
+
 }
 
-.sos-btn--safe {
-  margin-top: 12px;
-  background: #1f8a4c;
-  color: #fff;
-  padding: 14px;
-  font-size: 15px;
+.sos-btn:hover{
+
+transform:translateY(-2px);
+
 }
 
-.sos-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+.sos-btn--level2{
+
+background:#ffb84d;
+
+color:white;
+
+}
+
+.sos-btn--level3{
+
+background:#ff5f7e;
+
+color:white;
+
+}
+
+.sos-btn--safe{
+
+background:#52b788;
+
+color:white;
+
+}
+
+@keyframes pulse{
+
+0%{
+
+transform:scale(1);
+
+box-shadow:
+0 0 0 0 rgba(215,38,95,.35),
+0 20px 45px rgba(215,38,95,.35);
+
+}
+
+70%{
+
+box-shadow:
+0 0 0 25px rgba(215,38,95,0),
+0 20px 45px rgba(215,38,95,.35);
+
+}
+
+100%{
+
+transform:scale(1);
+
+box-shadow:
+0 0 0 0 rgba(215,38,95,0),
+0 20px 45px rgba(215,38,95,.35);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.sos-hold-button{
+
+width:180px;
+height:180px;
+font-size:2.5rem;
+
+}
+
+.sos-status-grid{
+
+grid-template-columns:1fr;
+
+}
+
 }

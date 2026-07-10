@@ -1,0 +1,23 @@
+.about{
+    padding:90px 8%;
+    background:#fff8fb;
+}
+
+.about-content{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.about h2{
+    color:#b44d77;
+    font-size:2.5rem;
+    margin-bottom:25px;
+}
+
+.about p{
+    color:#666;
+    line-height:1.9;
+    font-size:17px;
+    margin-bottom:20px;
+}
